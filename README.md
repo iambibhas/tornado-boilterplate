@@ -2,7 +2,7 @@ Tornado Boilerplate v3.1
 ===================
 
 This is a quick boilerplate to start building apps with Tornado.
-It has an almost similar organization of a Django app, as most people are
+It has an almost similar organization of a Django project, as most people are
 familar with it. This is how it looks -
 
     .
@@ -12,7 +12,7 @@ familar with it. This is how it looks -
     │   └── main
     │       ├── __init__.py
     │       ├── urls.py
-    │       ├── views.py
+    │       └── views.py
     ├── __init__.py
     ├── settings.py
     ├── static

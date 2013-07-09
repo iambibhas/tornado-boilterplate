@@ -1,3 +1,6 @@
+from tornado import web
+from settings import STATIC_ROOT
+
 from handlers.main.views import HomeHandler
 
 def include(module_path):
@@ -7,6 +10,7 @@ def include(module_path):
 
 
 urls = [
-    # (r"/", HomeHandler),
+    (r"/", HomeHandler),
+    (r"/static/(.*)", web.StaticFileHandler, {"path": STATIC_ROOT}),
 ]
 urls += include("handlers.main.urls")

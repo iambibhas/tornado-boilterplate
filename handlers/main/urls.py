@@ -1,5 +1,5 @@
 from .views import HomeHandler
 
 urls = [
-    (r"/main/", HomeHandler),
+    # (r"/main/", HomeHandler),
 ]
