@@ -1,5 +1,5 @@
-from .views import HomeHandler
+from .views import TestHandler
 
 urls = [
-    # (r"/main/", HomeHandler),
+    (r"/test/", TestHandler),
 ]
