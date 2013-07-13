@@ -7,8 +7,8 @@ def include(prefix, module_path):
     final_urls = list()
     for url in urls:
         pattern, rest = unpack(*url)
-        if not pattern.startswith("/"):
-            pattern = r"%s/%s" % (prefix, pattern)
+        if pattern.startswith("/"):
+            pattern = r"%s%s" % (prefix, pattern[1:])
         else:
             pattern = r"%s%s" % (prefix, pattern)
         final_urls.append((pattern,) + rest)

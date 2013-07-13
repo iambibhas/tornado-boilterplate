@@ -1,5 +1,5 @@
 from .views import TestHandler
 
 urls = [
-    (r"/test/", TestHandler),
+    (r"test/", TestHandler),
 ]
