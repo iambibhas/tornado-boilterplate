@@ -21,3 +21,13 @@ familar with it. This is how it looks -
     │   ├── base.html
     │   └── home.html
     └── urls.py
+
+
+Bits
+----
+
+ - Settings as a dictionary and full reference
+ - Added shell tp play with the system
+ - Added apps folder to separate logic in modules
+ - *Enabled importing/including urls from different apps, maintaing pattern*
+ - Showing message when starting and stoping the server
