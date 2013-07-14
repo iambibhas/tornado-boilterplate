@@ -26,8 +26,43 @@ familar with it. This is how it looks -
 Bits
 ----
 
- - Settings as a dictionary, with full reference
- - Added shell to play with the system
- - Added apps folder to separate logic in modules
- - *Enabled importing/including urls from different apps, maintaing pattern*
- - Showing message when starting and stoping the server
+## Settings ##
+Settings as a dictionary, with full reference
+
+    settings = {
+        # debug: If True the application runs in debug mode
+        'debug': True,
+
+        ...
+    }
+
+***
+## Shell ##
+Added shell to play with the system
+
+    (venv) ~/Works/tornado-boilerplate/project$ python shell.py
+    >>> import tornado.web
+    >>>
+
+***
+## Apps ##
+Added apps folder to separate logic in modules
+
+***
+## Importing urls ##
+Enabled importing/including urls from different apps, maintaing pattern
+
+    urls = [
+        (r"/", HomeHandler),
+        (r"/static/(.*)", web.StaticFileHandler, {"path": settings.get('static_path')}),
+    ]
+    urls += include(r"/main/", "apps.main.urls")
+
+***
+## Server start/stop message ##
+Showing message when starting and stoping the server
+
+    (venv) ~/Works/tornado-boilerplate/project$ python server.py
+    Starting server on http://127.0.0.1:8888
+    ^C
+    Stopping server.
