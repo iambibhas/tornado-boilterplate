@@ -23,9 +23,6 @@ familar with it. This is how it looks -
     └── urls.py
 
 
-Bits
-----
-
 ## Settings ##
 Settings as a dictionary, with full reference
 
