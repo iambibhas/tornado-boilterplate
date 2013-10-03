@@ -1,11 +1,12 @@
 from tornado import web
+from tornado.web import URLSpec as url
 from settings import settings
 from utils import include
 
 from apps.main.views import HomeHandler
 
 urls = [
-    (r"/", HomeHandler),
-    (r"/static/(.*)", web.StaticFileHandler, {"path": settings.get('static_path')}),
+    url(r"/", HomeHandler),
+    url(r"/static/(.*)", web.StaticFileHandler, {"path": settings.get('static_path')}),
 ]
-urls += include(r"/main/", "apps.main.urls")
+urls += include(r"/", "apps.main.urls")

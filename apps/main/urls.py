@@ -1,5 +1,6 @@
+from tornado.web import URLSpec as url
 from .views import TestHandler
 
 urls = [
-    (r"test/", TestHandler),
+    url(r"test/", TestHandler),
 ]
