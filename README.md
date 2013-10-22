@@ -49,17 +49,21 @@ Added apps folder to separate logic in modules
 ## Importing urls ##
 Enabled importing/including urls from different apps, maintaing pattern
 
+    from tornado.web import URLSpec as url
+
     urls = [
-        (r"/", HomeHandler),
-        (r"/static/(.*)", web.StaticFileHandler, {"path": settings.get('static_path')}),
+        url(r"/", HomeHandler),
+        url(r"/static/(.*)", web.StaticFileHandler, {"path": settings.get('static_path')}),
     ]
     # this will include patterns from urls.py inside `main` app.
     urls += include(r"/main/", "apps.main.urls")
 
 `/apps/main/urls.py`
 
+    from tornado.web import URLSpec as url
+
     urls = [
-        (r"test/", TestHandler),  # This is `/main/test/`
+        url(r"test/", TestHandler),  # This is `/main/test/`
     ]
 
 ***
